@@ -10,7 +10,8 @@ function Filter($Value){
 
 
 $getchoicevalues = $_POST["choice"];
-$idies           = implode(", ", $getchoicevalues);
+$idiesconnect    = implode(", ", $getchoicevalues);
+$idies           = Filter($idiesconnect);
 
 
     $delete = $databaseconnection->prepare("DELETE FROM persons WHERE id IN($idies)");
